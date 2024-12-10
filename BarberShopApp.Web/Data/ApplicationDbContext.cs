@@ -9,5 +9,7 @@ namespace BarberShopApp.Web.Data
             : base(options)
         {
         }
+
+        public DbSet<LoginType> LoginTypes { get; set; }
     }
 }

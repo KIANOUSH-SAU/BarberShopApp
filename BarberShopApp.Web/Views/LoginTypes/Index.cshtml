@@ -1,0 +1,30 @@
+﻿@model IEnumerable<BarberShopApp.Web.Data.LoginType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><img class="img-circle w-25 h-25" src="~/@(item.Role + ".png")" /></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
